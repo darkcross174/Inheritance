@@ -1,16 +1,18 @@
-package ru.netology.manager;
+package ru.netology;
+
 
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
+import ru.netology.manager.ProductManager;
 import ru.netology.repository.ProductRepository;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class ProductManagerTest {
 
-    @Test
-    void shouldSearchNameBook() {
+    @Test()
+    public void shouldSearchNameBook() {
         ProductRepository repository = new ProductRepository();
         ProductManager manager = new ProductManager();
         Book book1 = new Book(1, "Financier", 799, "Dreiser");
@@ -27,7 +29,7 @@ class ProductManagerTest {
     }
 
     @Test
-    void shouldSearchAuthorBook() {
+    public void shouldSearchAuthorBook() {
         ProductRepository repository = new ProductRepository();
         ProductManager manager = new ProductManager();
         Book book1 = new Book(1, "Financier", 799, "Dreiser");
@@ -44,7 +46,7 @@ class ProductManagerTest {
     }
 
     @Test
-    void shouldSearchNameTwoBook() {
+    public void shouldSearchNameTwoBook() {
         ProductRepository repository = new ProductRepository();
         ProductManager manager = new ProductManager();
         Book book1 = new Book(1, "Financier", 799, "Dreiser");
@@ -59,5 +61,6 @@ class ProductManagerTest {
         Product[] expected = new Product[]{book1, book3};
         assertArrayEquals(expected, actual);
     }
+
 }
 
