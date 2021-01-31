@@ -16,17 +16,10 @@
 
 
     <dependencies>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.7.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -38,12 +31,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
             </plugin>
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version>
+                <version>0.8.6</version>
                 <executions>
-
                     <execution>
                         <id>prepare-agent</id>
                         <phase>initialize</phase>
@@ -51,7 +44,6 @@
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-
                     <execution>
                         <id>report</id>
                         <phase>verify</phase>
@@ -59,39 +51,8 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
-
-                    <execution>
-                        <id>check</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
                 </executions>
-
-                <configuration>
-                    <rules>
-                        <rule>
-                            <element>CLASS</element>
-                            <exludes>
-                                <exlude>*Test</exlude>
-                                <exlude>Movie</exlude>
-                                <exlude>MainPageManager</exlude>
-                            </exludes>
-                            <limits>
-                                <limit>
-                                    <counter>BRANCH</counter>
-                                    <value>COVEREDRATIO</value>
-                                </limit>
-                            </limits>
-                        </rule>
-                    </rules>
-                </configuration>
-
             </plugin>
-
         </plugins>
-
     </build>
-
 </project>
