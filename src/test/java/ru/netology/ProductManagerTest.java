@@ -16,7 +16,7 @@ class ProductManagerTest {
     ProductManager manager = new ProductManager(repository);
     Book book1 = new Book(1, "Financier", 799, "Dreiser");
     Book book2 = new Book(2, "The Richest Man in Babylon", 899, "George Samuel Clayson");
-    Book book3 = new Book(3, "The Jungle book", 999, "Joseph Rudyard Kipling");
+    Book book3 = new Book(3, "Financier", 999, "Joseph Rudyard Kipling");
     Book book4 = new Book(4, "Instruction for Iphone 12", 1299, "Non author");
 
     @BeforeEach
@@ -42,12 +42,10 @@ class ProductManagerTest {
     }
 
     @Test
-    /* Failing test */
     public void shouldSearchNameTwoBook() {
         Product[] actual = manager.searchBy("Financier");
         Product[] expected = new Product[]{book1, book3};
         assertArrayEquals(expected, actual);
     }
-
 }
 
