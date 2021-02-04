@@ -18,8 +18,8 @@ class ProductManagerTest {
     Book book2 = new Book(2, "The Richest Man in Babylon", 899, "George Samuel Clayson");
     Book book3 = new Book(3, "Book of Jungle", 999, "Joseph Rudyard Kipling");
     Book book4 = new Book(4, "Instruction for Iphone 12", 1299, "Non author");
-    Book book5 = new Book(1, "Financier or not", 799, "Dreiser");
-    Book book6 = new Book(1, "Financier", 799, "Dreiser or not");
+    Book book5 = new Book(5, "Financier or not", 799, "Dreiser");
+    Book book6 = new Book(6, "Financier", 799, "Dreiser or not");
 
     @BeforeEach
     public void setUp() {
