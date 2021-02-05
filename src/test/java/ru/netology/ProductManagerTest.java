@@ -21,8 +21,9 @@ class ProductManagerTest {
     Book book4 = new Book(4, "Instruction for Iphone 12", 1299, "Non author");
     Book book5 = new Book(5, "Financier or not", 799, "Dreiser");
     Book book6 = new Book(6, "Financier", 799, "Dreiser or not");
-    Book book3 = new Book(7, "The Jungle book", 999, "Joseph Rudyard Kipling");
-    Book book4 = new Book(8, "Instruction for Iphone 12", 1299, "Non author");
+    Book book7 = new Book(7, "The Jungle book", 999, "Joseph Rudyard Kipling");
+    Book book8 = new Book(8, "Instruction for Iphone 12", 1299, "Non author");
+
 
     @BeforeEach
     public void setUp() {
@@ -32,6 +33,8 @@ class ProductManagerTest {
         manager.add(book4);
         manager.add(book5);
         manager.add(book6);
+        manager.add(book7);
+        manager.add(book8);
     }
 
     
