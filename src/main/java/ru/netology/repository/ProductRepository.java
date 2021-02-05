@@ -4,10 +4,12 @@ import ru.netology.domain.Product;
 
 public class ProductRepository {
 
-    private Product[] items = new Product[0];
+    private static Product[] items;
+    private final Product[] item = new Product[0];
 
-    public void save(Product item) {
-        int length = items.length + 1;
+    public static void save(Product item) {
+        int length;
+        length = items.length + 1;
         Product[] tmp = new Product[length];
         System.arraycopy(items, 0, tmp, 0, items.length);
         int lastIndex = tmp.length - 1;
