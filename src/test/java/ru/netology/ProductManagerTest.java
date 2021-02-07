@@ -25,6 +25,12 @@ class ProductManagerTest {
     Book book7 = new Book(7, "The Jungle book", 999, "Joseph Rudyard Kipling");
     Book book8 = new Book(8, "Instruction for Iphone 12", 1299, "Non author");
 
+    Smartphone smartphone1 = new Smartphone(9, "Honor", 1299, "China");
+    Smartphone smartphone2 = new Smartphone(10, "Xiaomi", 2999, "EU");
+    Smartphone smartphone3 = new Smartphone(11, "Oppo", 3999, "United Kingdom");
+    Smartphone smartphone4 = new Smartphone(12, "Samsung", 5999, "USA");
+    Smartphone smartphone5 = new Smartphone(13,"Xiaomi", 7899, "China");
+
 
     @BeforeEach
     public void setUp() {
@@ -36,11 +42,15 @@ class ProductManagerTest {
         manager.add(book6);
         manager.add(book7);
         manager.add(book8);
+        manager.add(smartphone1);
+        manager.add(smartphone2);
+        manager.add(smartphone3);
+        manager.add(smartphone4);
+        manager.add(smartphone5);
     }
 
 
     @Test
-
     public void shouldSearchNameBook() {
         Product[] actual = manager.searchBy("The richest man in Babylon");
         Product[] expected = new Product[]{book2};
@@ -60,6 +70,35 @@ class ProductManagerTest {
         Product[] expected = new Product[]{book1, book6};
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldSearchNameSmartphone() {
+        Product[] actual = manager.searchBy("Honor");
+        Product[] expected = new Product[]{smartphone1};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchNameManufacturer() {
+        Product[] actual = manager.searchBy("USA");
+        Product[] expected = new Product[]{smartphone4};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchNameTwoSmartphone() {
+        Product[] actual = manager.searchBy("Xiaomi");
+        Product[] expected = new Product[]{smartphone2, smartphone5};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchNameTwoSmartphoneManufacturer() {
+        Product[] actual = manager.searchBy("China");
+        Product[] expected = new Product[]{smartphone1, smartphone5};
+        assertArrayEquals(expected, actual);
+    }
+
 }
 
 
